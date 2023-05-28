@@ -13,7 +13,7 @@ pages目录导出组件时按照目录结构生成组件名称，如：pages/con
 **vite version:** >=2.0.0
 
 ```bash
-npm i vite-plugin-vue-setup-extend-for-renloong -D
+npm i vite-plugin-vue-setup-path-extend -D
 ```
 
 ## 使用
@@ -23,10 +23,17 @@ npm i vite-plugin-vue-setup-extend-for-renloong -D
 ```ts
 import { defineConfig, Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueSetupExtend from 'vite-plugin-vue-setup-extend-for-renloong'
+import vueSetupExtend from 'vite-plugin-vue-setup-path-extend'
 
 export default defineConfig({
-  plugins: [vue(), vueSetupExtend()],
+  plugins: [
+    vue(), 
+    vueSetupExtend({
+      name: true,//启用名称扩展
+      path: true,//启用路径扩展
+      pathSeparator: ''//路径连接符，默认为路径
+    })
+  ],
 })
 ```
 

@@ -2,6 +2,11 @@
 
 const compilerSfc = require('@vue/compiler-sfc');
 const MagicString = require('magic-string');
+let __config = {
+    name: true,
+    path: true,
+    pathSeparator: ''
+};
 
 function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e["default"] : e; }
 
@@ -33,13 +38,17 @@ export default defineComponent({
 })
 <\/script>
 `);
-        } else {
+        } else if (__config.path) {
             const path = extractPathFromFilePath(id)
             if (path) {
+                path = path.replace(/\/index$/, '')
+                if (__config.pathSeparator) {
+                    path = path.replace(__config.pathSeparator, '/')
+                }
                 str().appendLeft(0, `<script ${lang ? `lang="${lang}"` : ""}>
 import { defineComponent } from 'vue'
 export default defineComponent({
-    name: '${path.replace(/\/index$/, '')}',
+    name: '${path}',
 })
 <\/script>
 `);
@@ -54,7 +63,7 @@ export default defineComponent({
     }
 }
 
-const index = (options = {}) => {
+const index = (options) => {
     return {
         name: "vite:setup-name-support",
         enforce: "pre",
@@ -62,8 +71,10 @@ const index = (options = {}) => {
             if (!/\.vue$/.test(id)) {
                 return null;
             }
-            const { name = true } = options;
-            if (name) {
+            if (options) {
+                __config = Object.assign(__config, options);
+            }
+            if (__config.name) {
                 return supportScriptName.call(this, code, id);
             }
             return null;

@@ -1,7 +1,7 @@
 {
-    "name": "vite-plugin-vue-setup-extend-for-renloong",
+    "name": "vite-plugin-vue-setup-path-extend",
     "version": "1.0.0",
-    "description": "Extending the vue script setup syntactic sugar",
+    "description": "扩展vue3语法糖name属性为组件名",
     "main": "dist/index.cjs",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
