@@ -1,7 +1,9 @@
 # vite-plugin-vue-setup-name-support
 
 使用vue3语法糖（setup）支持name属性作为组件名称
+
 pages目录导出组件时按照目录结构生成组件名称，如：pages/control/site/create.vue => /control/site/create
+
 当组件名称结尾是index时，会自动去掉index，如：/control/site/index => /control/site
 
 ## 安装
