@@ -12,6 +12,11 @@ interface ExtendOptions {
      */
     path?: boolean;
     /**
+     * 启用自动替换/index
+     * @default true
+     */
+    index?: boolean;
+    /**
      * 路径连接符
      * @default ''
      */

@@ -5,6 +5,7 @@ const MagicString = require('magic-string');
 let __config = {
     name: true,
     path: true,
+    index: true,
     pathSeparator: ''
 };
 
@@ -39,9 +40,11 @@ export default defineComponent({
 <\/script>
 `);
         } else if (__config.path) {
-            const path = extractPathFromFilePath(id)
+            let path = extractPathFromFilePath(id)
             if (path) {
-                path = path.replace(/\/index$/, '')
+                if (__config.index) {
+                    path = path.replace(/\/index$/, '')
+                }
                 if (__config.pathSeparator) {
                     path = path.replace(__config.pathSeparator, '/')
                 }
