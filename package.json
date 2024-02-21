@@ -24,17 +24,17 @@
         "stup",
         "vite-plugin"
     ],
-    "author": "Vben",
+    "author": "RenLoong",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/uRenlong/vite-plugin-vue-setup-extend",
+        "url": "https://github.com/RenLoong/vite-plugin-vue-setup-extend",
         "directory": "packages/core"
     },
     "bugs": {
-        "url": "https://github.com/uRenlong/vite-plugin-vue-setup-extend/issues"
+        "url": "https://github.com/RenLoong/vite-plugin-vue-setup-extend/issues"
     },
-    "homepage": "https://github.com/uRenlong/vite-plugin-vue-setup-extend/tree/master/#readme",
+    "homepage": "https://github.com/RenLoong/vite-plugin-vue-setup-extend/tree/master/#readme",
     "dependencies": {
         "@vue/compiler-sfc": "^3.2.29",
         "magic-string": "^0.25.7"
