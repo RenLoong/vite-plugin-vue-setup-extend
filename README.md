@@ -31,7 +31,7 @@ export default defineConfig({
     vueSetupExtend({
       name: true,//启用名称扩展
       path: true,//启用路径扩展
-      pathSeparator: ''//路径连接符，默认为路径
+      pathSeparator: ''//路径连接符，默认为"/"
     })
   ],
 })
