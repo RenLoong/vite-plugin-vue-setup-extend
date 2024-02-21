@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-vue-setup-path-extend",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "扩展vue3语法糖name属性为组件名",
     "main": "dist/index.cjs",
     "module": "dist/index.mjs",
